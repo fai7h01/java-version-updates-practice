@@ -3,10 +3,10 @@ package com.cydeo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Team {
+public class Team<T> { // T-SoccerPlayer, FootballPlayer, BaseballPlayer
 
     private String name;
-    private List<Player> members = new ArrayList<>();
+    private List<T> members = new ArrayList<>();
 
     public Team(String name) {
         this.name = name;
@@ -16,13 +16,13 @@ public class Team {
         return name;
     }
 
-    public boolean addPlayer(Player player){
+    public boolean addPlayer(T player){
         if (members.contains(player)){
-            System.out.println(player.getName() + " is already in the team");
+            System.out.println(((Player)player).getName() + " is already in the team");
             return false;
         }else {
             members.add(player);
-            System.out.println(player.getName() + " picked for team " + name);
+            System.out.println(((Player)player).getName() + " picked for team " + name);
             return true;
         }
     }
