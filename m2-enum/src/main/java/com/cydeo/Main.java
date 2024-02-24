@@ -5,6 +5,9 @@ import static com.cydeo.Operation.PLUS;
 public class Main {
     public static void main(String[] args) {
 
+        Apple a = new Apple(5);
+
+
         System.out.println("How to access a constant");
 
         Currency c = Currency.DIME;
@@ -34,6 +37,10 @@ public class Main {
                 System.out.println("It is 25 cent");
                 break;
         }
+
+        System.out.println("Operation task");
+        calculate(10, 5, Operation.PLUS);
+
 
     }
 
