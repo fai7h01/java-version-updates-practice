@@ -1,4 +1,5 @@
 package com.cydeo;
+
 import java.util.ArrayList;
 
 public class Main {
@@ -20,19 +21,16 @@ public class Main {
         BaseballPlayer pat = new BaseballPlayer("Pat");
         SoccerPlayer leo = new SoccerPlayer("Leo");
 
-        Team liverpool = new Team("Liverpool"); // Team accepting any object
-        liverpool.addPlayer(joe);
-        liverpool.addPlayer(pat);
+        Team<SoccerPlayer> liverpool = new Team("Liverpool"); // Team accepting any object
+
+        //liverpool.addPlayer(joe);
+        //liverpool.addPlayer(pat);
         liverpool.addPlayer(leo);
-
-
-
-
 
 
     }
 
-    private static void printDoubled(ArrayList<Integer> items){
+    private static void printDoubled(ArrayList<Integer> items) {
         for (Integer item : items) {
             System.out.println(item * 2);
         }
