@@ -31,3 +31,4 @@ bin/
 /java-version-updates-practice.iml
 /.idea/
 /m1-generics/target/
+/m2-enum/target/
