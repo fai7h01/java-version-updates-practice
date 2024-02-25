@@ -8,7 +8,7 @@ public class RoleStatic {
 
     public String value;
 
-    public RoleStatic(String value){
+    private RoleStatic(String value){
         this.value = value;
     }
 
