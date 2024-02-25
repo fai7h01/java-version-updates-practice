@@ -19,8 +19,21 @@ public class GenericsTest {
         teacherList.add(new Teacher("Albus", 201));
         teacherList.add(new Teacher("John", 202));
 
+
+        List<Person> personList = new ArrayList<>();
+        personList.add(new Student("Mike", 101));
+        personList.add(new Student("Joe", 102));
+        personList.add(new Student("Adam", 103));
+        personList.add(new Teacher("Albus", 201));
+        personList.add(new Teacher("John", 202));
+
         printInfo2(studentList);
         printInfo2(teacherList);
+        printInfo3(personList);
+
+       // printInfo3(studentList);
+        //printInfo3(teacherList);
+        printInfo3(personList);
 
     }
 
@@ -41,10 +54,19 @@ public class GenericsTest {
     // List<T>      -> list have -> Student1, Student2, Student3
 
     // List<T extends Student>      -> list have -> Student1, Student2, Student3
-    public static <T extends Student> void printInfo2(List<T> personList){
+    // List<T extends Person>      -> list have -> Person, Student, Teacher
+    public static <T extends Person> void printInfo2(List<T> personList){
 
         for (T eachPerson : personList) {
-            System.out.println(eachPerson.getName());
+            System.out.println(eachPerson);
+        }
+
+    }
+
+    public static void printInfo3(List<Person> personList){
+
+        for (Person eachPerson : personList) {
+            System.out.println(eachPerson);
         }
 
     }
