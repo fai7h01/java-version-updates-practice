@@ -1,0 +1,52 @@
+package com.cydeo.review;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GenericsTest {
+
+    public static void main(String[] args) {
+
+        List<Student> studentList = new ArrayList<>();
+
+        studentList.add(new Student("Mike", 101));
+        studentList.add(new Student("Joe", 102));
+        studentList.add(new Student("Adam", 103));
+
+
+        List<Teacher> teacherList = new ArrayList<>();
+
+        teacherList.add(new Teacher("Albus", 201));
+        teacherList.add(new Teacher("John", 202));
+
+        printInfo2(studentList);
+        printInfo2(teacherList);
+
+    }
+
+    public static void printInfo(List<Student> students){
+
+        for (Student eachStudent : students) {
+            System.out.println(eachStudent);
+        }
+
+    }
+
+    // List<Object> -> list have -> 1, "string", Student          ---->>   eliminated (List<T>)
+    // List<Object> -> list have -> Student1, Student2, Student3
+    // List<Object> -> list have -> 1, 2, 3                       ---->>   eliminated (List<T extends Student>)
+    // List<Object> -> list have -> "str1", "str2", "str3"        ---->>   eliminated (List<T extends Student>)
+    // List<T>      -> list have -> "str1", "str2", "str3"
+    // List<T>      -> list have -> 1, 2, 3
+    // List<T>      -> list have -> Student1, Student2, Student3
+
+    // List<T extends Student>      -> list have -> Student1, Student2, Student3
+    public static <T extends Student> void printInfo2(List<T> personList){
+
+        for (T eachPerson : personList) {
+            System.out.println(eachPerson.getName());
+        }
+
+    }
+
+}
