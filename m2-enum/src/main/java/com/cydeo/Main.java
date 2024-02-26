@@ -7,7 +7,6 @@ public class Main {
 
         Apple a = new Apple(5);
 
-
         System.out.println("How to access a constant");
 
         Currency c = Currency.DIME;
@@ -40,6 +39,12 @@ public class Main {
 
         System.out.println("Operation task");
         calculate(10, 5, Operation.PLUS);
+
+        System.out.println("How to retrieve the constant value");
+        System.out.println(Currency.PENNY.getValue());
+        System.out.println(Currency.QUARTER.getValue());
+        System.out.println(Currency.QUARTER.ordinal()); // index
+
 
 
     }
