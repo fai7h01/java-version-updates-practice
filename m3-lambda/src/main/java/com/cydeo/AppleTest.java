@@ -1,5 +1,7 @@
 package com.cydeo;
 
+import com.cydeo.tasks.ApplePredicate2;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,13 +23,30 @@ public class AppleTest {
 
         filterApples(inventory, weightApple);
 
+        System.out.println("-----------------------------------------");
+
+        ApplePredicate2 appleColorWeight = apple -> apple.getWeight() > 200 ? "A heavy " + apple.getColor() + " apple" : "A light " + apple.getColor() + " apple";
+        ApplePredicate2 appleWeight = apple -> "An apple of " + apple.getWeight() + "g";
+
+
+        prettyPrintApple(inventory, appleColorWeight);
+        prettyPrintApple(inventory, appleWeight);
+
+
     }
 
-    private static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p){ // behavior parametrization
+    private static void prettyPrintApple(List<Apple> inventory, ApplePredicate2 p) {
+        for (Apple apple : inventory) {
+            String output = p.test(apple);
+            System.out.println(output);
+        }
+    }
+
+    private static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p) { // behavior parametrization
         List<Apple> result = new ArrayList<>();
 
         for (Apple apple : inventory) {
-            if (p.test(apple)){
+            if (p.test(apple)) {
                 result.add(apple);
             }
         }
