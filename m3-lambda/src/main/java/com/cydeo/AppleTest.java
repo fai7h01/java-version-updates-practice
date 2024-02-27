@@ -1,7 +1,5 @@
 package com.cydeo;
 
-import com.cydeo.tasks.ApplePredicate2;
-
 import java.util.ArrayList;
 import java.util.List;
 
