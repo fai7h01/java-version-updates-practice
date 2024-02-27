@@ -17,9 +17,13 @@ public class AppleTest {
         System.out.println(greenApple);
         System.out.println(heavyApple);
 
+        ApplePredicate weightApple = apple -> apple.getWeight() > 200; // Lambda expression
+
+        filterApples(inventory, weightApple);
+
     }
 
-    private static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p){
+    private static List<Apple> filterApples(List<Apple> inventory, ApplePredicate p){ // behavior parametrization
         List<Apple> result = new ArrayList<>();
 
         for (Apple apple : inventory) {

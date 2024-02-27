@@ -1,5 +1,6 @@
 package com.cydeo;
 
-public interface ApplePredicate { // functional programming
+@FunctionalInterface
+public interface ApplePredicate { // functional interface
     boolean test(Apple apple);
 }
