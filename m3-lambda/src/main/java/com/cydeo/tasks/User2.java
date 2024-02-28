@@ -2,13 +2,9 @@ package com.cydeo.tasks;
 
 import lombok.*;
 
-//@Getter
-//@Setter
-//@AllArgsConstructor
-//@ToString
-@Data
+@Data // @Getter @Setter @ToString
 @AllArgsConstructor
-//@NoArgsConstructor
+@NoArgsConstructor
 public class User2 {
 
     private String firstName;
