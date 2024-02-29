@@ -34,3 +34,4 @@ bin/
 /m2-enum/target/
 /m3-lambda/target/
 /m4-double_colon_operators/target/
+/m5-comparator_interface/target/
