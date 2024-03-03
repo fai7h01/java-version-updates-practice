@@ -29,6 +29,17 @@ public class CarTest {
         System.out.println("New Cars:");
         System.out.println(filter(carList, new CarNewPredicate()));
 
+        //---------------------------------------------------------------------------------------
+
+        System.out.println("********Lambda********");
+        System.out.println("Fast Cars:");
+        System.out.println(filter(carList, car -> car.getTopSpeed() > 160));
+
+        System.out.println("New Cars:");
+        System.out.println(filter(carList, car -> car.getYear() > 2015));
+
+
+
 
     }
 
