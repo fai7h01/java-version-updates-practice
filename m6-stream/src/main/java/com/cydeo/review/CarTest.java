@@ -38,6 +38,15 @@ public class CarTest {
         System.out.println("New Cars:");
         System.out.println(filter(carList, car -> car.getYear() > 2015));
 
+        //---------------------------------------------------------------------------------------
+
+        System.out.println("********Lambda - Functional interface********");
+        System.out.println("Fast Cars:");
+        System.out.println(filter2(carList, car -> car.getTopSpeed() > 160));
+
+        System.out.println("New Cars:");
+        System.out.println(filter2(carList, car -> car.getYear() > 2015));
+
 
 
 
@@ -75,8 +84,17 @@ public class CarTest {
             }
         }
         return filteredCars;
+    }
 
+    private static List<Car> filter2(List<Car> carList, Predicate<Car> carPredicate){
+        List<Car> filteredCars = new ArrayList<>();
 
+        for (Car each : carList) {
+            if (carPredicate.test(each)){
+                filteredCars.add(each);
+            }
+        }
+        return filteredCars;
     }
 
 }
