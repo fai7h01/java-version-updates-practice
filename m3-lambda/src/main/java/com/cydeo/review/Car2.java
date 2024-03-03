@@ -32,13 +32,11 @@ public class Car2 {
         private int topSpeed;
         private int year;
 
-        public Car2Builder() {
-        }
-
         public Car2Builder make(String make){
             this.make = make;
             return this;
         }
+
         public Car2Builder topSpeed(int topSpeed){
             this.topSpeed = topSpeed;
             return this;
@@ -48,20 +46,21 @@ public class Car2 {
             return this;
         }
 
-        public Car2 build(){ // -----
+        public Car2 build(){
+
             Car2 car2 = new Car2();
-            if (this.make != null) {
+
+            if (this.make != null){
                 car2.setMake(this.make);
             }
-            if (this.topSpeed != 0) {
+            if (this.topSpeed != 0){
                 car2.setTopSpeed(this.topSpeed);
             }
-            if (this.year != 0) {
+            if (this.year != 0){
                 car2.setYear(this.year);
             }
             return car2;
         }
 
     }
-
 }
