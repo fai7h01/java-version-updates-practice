@@ -1,49 +1,32 @@
 package com.cydeo.review;
 
+import lombok.*;
+
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
+////@NoArgsConstructor
+//@RequiredArgsConstructor
+//@ToString(exclude = "topSpeed")
+//@Getter
+//@Setter
+@Data
+@Builder
 public class Car {
 
+    //  @Getter(AccessLevel.NONE)
     private String make;
     private int topSpeed;
-    private int year;
+    //private final int year;
+    private final int year;
+    //private final int year;
 
-    public Car(String make, int topSpeed, int year) {
-        this.make = make;
-        this.topSpeed = topSpeed;
-        this.year = year;
+    public String getMake() throws Exception {
+        if (make.equals("Toyota")){
+            return make;
+        }
+        throw new Exception("Not a toyota");
     }
 
-    public String getMake() {
-        return make;
-    }
-
-    public void setMake(String make) {
-        this.make = make;
-    }
-
-    public int getTopSpeed() {
-        return topSpeed;
-    }
-
-    public void setTopSpeed(int topSpeed) {
-        this.topSpeed = topSpeed;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    @Override
-    public String toString() {
-        return "Car{" +
-                "make='" + make + '\'' +
-                ", topSpeed=" + topSpeed +
-                ", year=" + year +
-                '}';
-    }
+}
 
 //    int f(int x) {
 //        return x + 5;
@@ -52,7 +35,7 @@ public class Car {
 //    int g(int x) {
 //        return x + 10;
 //    }
-                            //          x + 10 + 5
+//          x + 10 + 5
 //  f(x) = x + 5                f(g(x)) = g(x) + 5 = x + 10 + 5 = x + 15
 //    3  = 3 + 5 = 8            f(k(x)) = k(x) + 5 = x + 1 + 5  = x + 6
 //    12 = 12 + 5 = 17
@@ -67,7 +50,6 @@ public class Car {
 
 //   k(x) = x + 1
 
-}
 
 
 
