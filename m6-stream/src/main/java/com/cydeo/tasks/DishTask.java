@@ -33,7 +33,7 @@ public class DishTask {
         System.out.println("task 4:");
         DishData.getAll().stream()
                 .filter(dish -> dish.getCalories() < 400)
-                .sorted(Comparator.comparing(Dish::getCalories))
+                .sorted(Comparator.comparing(Dish::getCalories).reversed())
                 .map(Dish::getName)
                 .forEach(System.out::println);
         // .forEach(System.out::println);
