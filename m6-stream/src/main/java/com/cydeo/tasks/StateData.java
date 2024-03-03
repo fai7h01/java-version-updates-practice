@@ -6,9 +6,7 @@ import java.util.List;
 import java.util.stream.Stream;
 
 public class StateData {
-
     public static Stream<State> getAll() {
-        
         State texas = new State("Texas");
         texas.addCity("Dallas");
         texas.addCity("Houston");
@@ -20,6 +18,7 @@ public class StateData {
         ohio.addCity("Columbus");
 
         return new ArrayList<>(Arrays.asList(texas,ohio)).stream();
+
 
     }
 }
