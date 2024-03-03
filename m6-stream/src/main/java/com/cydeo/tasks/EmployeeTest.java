@@ -16,5 +16,11 @@ public class EmployeeTest {
                 .flatMap(employee -> employee.getEmpPhoneNumbers().stream())
                 .forEach(System.out::println);
 
+        System.out.println("Print all numbers with double colon");
+        EmployeeData.readAll()
+                .map(Employee::getEmpPhoneNumbers)
+                .flatMap(List::stream)
+                .forEach(System.out::println);
+
     }
 }
