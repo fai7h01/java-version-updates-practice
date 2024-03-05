@@ -3,7 +3,7 @@ package com.cydeo.tasks;
 import java.util.Arrays;
 import java.util.List;
 
-public class PrintDouble {
+public class PrintSquare {
     public static void main(String[] args) {
 
         //Print square of each number
