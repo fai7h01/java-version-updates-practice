@@ -1,3 +1,3 @@
-module moduleOptional {
-    requires moduleJava9;
+module module7 {
+    requires module8;
 }
